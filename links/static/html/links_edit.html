@@ -21,11 +21,18 @@
 </div>
 <span class="tip setting-help">Example: https://www.bing.com</span>
 </li>
+<li class="field comp-setting-entry is-set">
+<div class="wrapper-comp-setting">
+<label class="label setting-label" for="href4">Fourth URL</label>
+<input class="input setting-input" name="href4" id="href4" value="{href4}" type="text" />
+</div>
+<span class="tip setting-help">Example: https://www.w3schools.com</span>
+</li>
 </ul>
 <div class="xblock-actions">
 <ul>
 <li class="action-item">
-<a href="#" class="button action-primary save-button">Save</a>
+<a href="#" class="button action-primary save-button" onclick="alertbox">Save</a>
 </li>
 <li class="action-item">
 <a href="#" class="button cancel-button">Cancel</a>
@@ -33,3 +40,9 @@
 </ul>
 </div>
 </div>
+
+<script>
+function alertbox() {
+    alert("You must fill all links!");
+}
+</script>

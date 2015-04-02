@@ -19,6 +19,7 @@ class LinksXBlock(XBlock):
     href1 = String (help = "First URL", default=None, scope=Scope.content)
     href2 = String (help = "Second URL",default=None, scope=Scope.content)
     href3 = String (help = "Third URL", defaule=None, scope=Scope.content)
+    href4 = String (help = "Fourth URL",default=None, scope=Scope.content)
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -45,6 +46,7 @@ class LinksXBlock(XBlock):
 	self.href1 = data['href1']
 	self.href2 = data['href2']
 	self.href3 = data['href3']
+  	self.href4 = data['href4']
 	return {
 		'result': 'success',
 	}
@@ -67,7 +69,8 @@ class LinksXBlock(XBlock):
 	href1 = self.href1 or ''
 	href2 = self.href2 or ''
 	href3 = self.href3 or ''
-	frag =Fragment(html.format(href1=href1,href2=href2,href3=href3,self=self))
+	href4 = self.href4 or ''
+	frag =Fragment(html.format(href1=href1,href2=href2,href3=href3,href4=href4,self=self))
 	frag.add_javascript(self.resource_string("static/js/src/links_edit.js"))
 	frag.initialize_js('LinksEditXBlock')
 	return frag
